@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from 'dotenv';
 import connectDB from "./Database/connectDB.js";
 import { router } from "./Routes/user-routes.js";
+import { blogRouter } from "./Routes/blog-routes.js";
 
 
 dotenv.config()
@@ -27,4 +28,6 @@ connectDB(url)
 
 
 app.use("/api/user",router)
+
+app.use("/api/blog",blogRouter)
 
